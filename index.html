@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Немецкий язык</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <div class="theme-select">
+        <label for="theme-select" class="theme-label">Тема:</label>
+        <select id="theme-select" onchange="changeTheme(this.value)">
+            <option value="light">Светлая</option>
+            <option value="dark">Темная</option>
+            <option value="violet">Фиолетовая</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <h1>Немецкий язык</h1>
+        <p>Выберите уровень:</p>
+        <button class="level-button level-1" onclick="startGame(1)">Уровень 1 (1-100)</button>
+        <button class="level-button level-2" onclick="startGame(2)">Уровень 2 (101-500)</button>
+        <button class="level-button level-3" onclick="startGame(3)">Уровень 3 (501-1000)</button>
+        <button class="level-button level-4" onclick="startGame(4)">Уровень Все (0-1000)</button>
+
+        <div id="game" style="display:none;">
+            <p id="task" class="task-text"></p>
+            <input type="text" id="answer" placeholder="Введите ответ" onkeydown="handleKeyDown(event)">
+            <button id="check-button" class="check-button">Проверить</button>
+            <p id="feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
