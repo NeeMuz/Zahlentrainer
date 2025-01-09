@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schriftliche Praxis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <div class="theme-select">
+        <label for="theme-select" class="theme-label">Thema:</label>
+        <select id="theme-select" onchange="changeTheme(this.value)">
+            <option value="light">Helle</option>
+            <option value="dark">Dunkle</option>
+            <option value="violet">Violette</option>
+        </select>
+        <button onclick="window.location.href='index_2.html'" class="nav-button">Digitale Abenteuer</button>
+    </div>
+
+    <div class="container">
+        <h1>Schriftliche Praxis</h1>
+        <p>Wählen Sie das Niveau:</p>
+        <button class="level-button level-1" onclick="startGame(1)">Level 1 (1-100)</button>
+        <button class="level-button level-2" onclick="startGame(2)">Level 2 (101-500)</button>
+        <button class="level-button level-3" onclick="startGame(3)">Level 3 (501-1000)</button>
+        <button class="level-button level-4" onclick="startGame(4)">Level Alles (0-1000)</button>
+
+        <div id="game" style="display:none;">
+            <p id="task" class="task-text"></p>
+            <input type="text" id="answer" placeholder="Geben Sie die Antwort ein." onkeydown="handleKeyDown(event)">
+            <button id="check-button" class="check-button">Überprüfen</button>
+            <p id="feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

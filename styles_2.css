@@ -1,0 +1,245 @@
+﻿:root {
+    --light-background: #ffffff;
+    --light-button-bg: #a4a4a4;
+    --dark-background: #2a2e36;
+    --dark-button-bg: #6c63ff;
+    --violet-background: #8a2be2;
+    --violet-text: #e1bee7;
+    --text-color: #333;
+    --button-hover-bg: #a68dff;
+    --level-1-color: linear-gradient(135deg, #a6c1f7, #ffb74d, #81c784);
+    --level-2-color: linear-gradient(135deg, #9b99ff, #e57373, #64b5f6);
+    --level-3-color: linear-gradient(135deg, #7c5fff, #f5a623, #8a2be2);
+    --level-4-color: linear-gradient(135deg, #81c784, #e57373);
+    --feedback-correct: #4caf50;
+    --feedback-error: #d50064;
+    --input-bg: rgba(255, 255, 255, 0.8);
+    --input-focus-bg: rgba(255, 255, 255, 1);
+    --button-bg-light: #6495ed;
+    --button-bg-dark: #444;
+    --button-bg-violet: #8a2be2;
+    --button-check-bg: #444;
+    --char-light-bg: #e0e0e0;
+    --char-dark-bg: #4f4f4f;
+    --char-violet-bg: #8a2be2;
+    --nav-button-gradient: linear-gradient(128deg, rgba(30,170,215,1) 30%, rgba(244,250,216,1) 63%);
+}
+
+[data-theme="light"] {
+    --background-color: rgb(238, 174, 202);
+    --button-bg: var(--light-button-bg);
+    --button-hover-bg: #e0e0e0;
+    --text-color: #333;
+    --button-text-color: #000;
+    --gradient-background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    --theme-select-bg: linear-gradient(135deg, #ffffff, #f0f0f0);
+    --theme-label-bg: #e0e0e0;
+    --theme-label-color: #333;
+    --theme-option-bg: #e0e0e0;
+    --theme-option-color: #333;
+    --char-bg: var(--char-light-bg);
+    --input-text-color: #000;
+    --select-text-color: #333;
+}
+
+[data-theme="dark"] {
+    --background-color: var(--dark-background);
+    --button-bg: var(--dark-button-bg);
+    --button-hover-bg: #5f4b8b;
+    --text-color: #ffffff;
+    --button-text-color: white;
+    --gradient-background: linear-gradient(135deg, #2a2e36, #373a45, #4b4f58);
+    --theme-select-bg: linear-gradient(135deg, #333333, #444444);
+    --theme-label-color: #ffffff;
+    --theme-option-bg: #444444;
+    --theme-option-color: #ffffff;
+    --char-bg: var(--char-dark-bg);
+    --input-text-color: #000;
+    --select-text-color: #fff;
+}
+
+[data-theme="violet"] {
+    --background-color: rgb(126, 30, 215);
+    --button-bg: var(--button-bg-violet);
+    --button-hover-bg: #7c4dff;
+    --text-color: var(--violet-text);
+    --button-text-color: white;
+    --gradient-background: linear-gradient(135deg, rgba(126, 30, 215, 1) 0%, rgba(233, 216, 250, 1) 100%);
+    --theme-select-bg: linear-gradient(135deg, rgba(126, 30, 215, 1) 0%, rgba(233, 216, 250, 1) 100%);
+    --theme-label-color: #ffffff;
+    --theme-option-bg: #8a2be2;
+    --theme-option-color: #ffffff;
+    --char-bg: var(--char-violet-bg);
+    --input-text-color: #000;
+    --select-text-color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: var(--gradient-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-color);
+    transition: background 0.5s, color 0.3s;
+}
+
+html {
+    height: 100vh;
+    background: var(--gradient-background);
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: inherit;
+    color: var(--text-color);
+}
+
+button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: var(--button-text-color);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.level-button.level-1 {
+    background: var(--level-1-color);
+    color: white;
+}
+
+.level-button.level-2 {
+    background: var(--level-2-color);
+    color: white;
+}
+
+.level-button.level-3 {
+    background: var(--level-3-color);
+    color: white;
+}
+
+.level-button.level-4 {
+    background: var(--level-4-color);
+    color: white;
+}
+
+.level-button {
+    font-size: 16px;
+    padding: 18px 40px;
+}
+
+input {
+    padding: 15px;
+    font-size: 18px;
+    width: 80%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--input-text-color);
+    transition: background-color 0.3s;
+}
+
+input:focus {
+    background-color: var(--input-focus-bg);
+    outline: none;
+}
+
+select {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--theme-option-bg);
+    color: var(--select-text-color);
+}
+
+#feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.correct {
+    color: var(--feedback-correct);
+}
+
+.error {
+    color: var(--feedback-error);
+}
+
+.theme-select {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--theme-select-bg);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.theme-label {
+    font-weight: bold;
+    color: var(--theme-label-color);
+}
+
+.level-button:hover {
+    opacity: 0.8;
+}
+
+.task-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.check-button {
+    background-color: var(--button-check-bg);
+    color: white;
+}
+
+.special-chars {
+    display: inline-block;
+    background-color: var(--char-bg);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background: var(--nav-button-gradient);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
